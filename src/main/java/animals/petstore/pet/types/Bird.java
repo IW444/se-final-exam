@@ -9,22 +9,47 @@ import animals.petstore.pet.attributes.Skin;
 
 import java.math.BigDecimal;
 
+/**
+ * Bird attributes
+ */
 public class Bird extends Pet implements PetImpl {
     private int numberOfLegs;
     private Breed breed;
 
+    /**
+     * Constructor
+     * @param animalType {@link AnimalType} that defines if it is a domesticated or wild bird
+     * @param skinType The {@link Skin} of the bird
+     * @param gender The {@link Gender} of the bird
+     * @param breed The type of bird {@link Breed}
+     */
     public Bird(AnimalType animalType, Skin skinType, Gender gender, Breed breed)
     {
         this(animalType, skinType, gender, breed, new BigDecimal(0));
     }
 
-
+    /**
+     * Constructor
+     * @param animalType {@link AnimalType} that defines if it is a domesticated or wild bird
+     * @param skinType The {@link Skin} of the bird
+     * @param gender The {@link Gender} of the bird
+     * @param breed The type of bird {@link Breed}
+     * @param cost The cost of the bird
+     */
     public Bird(AnimalType animalType, Skin skinType, Gender gender, Breed breed, BigDecimal cost)
     {
         this(animalType, skinType, gender, breed, cost, 0);
     }
 
-
+    /**
+     * Constructor
+     * @param animalType {@link AnimalType} that defines if it is a domesticated or wild bird
+     * @param skinType The {@link Skin} of the bird
+     * @param gender The {@link Gender} of the bird
+     * @param breed The type of bird {@link Breed}
+     * @param cost The cost of the bird
+     * @param petStoreId The pet store id
+     */
     public Bird(AnimalType animalType, Skin skinType, Gender gender, Breed breed, BigDecimal cost, int petStoreId)
     {
         super(PetType.BIRD, cost, gender, petStoreId);
@@ -34,6 +59,10 @@ public class Bird extends Pet implements PetImpl {
         this.breed = breed;
     }
 
+    /**
+     * Depending if the bird is domestic, wild, or neither what can the say
+     * @return what bird would speak
+     */
     public String speak()
     {
         String language;
@@ -70,6 +99,9 @@ public class Bird extends Pet implements PetImpl {
         return super.animalType;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Breed getBreed() {
         return null;
