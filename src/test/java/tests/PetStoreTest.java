@@ -147,6 +147,19 @@ public class PetStoreTest
         assertEquals(sphynx.getPetStoreId(), removedItem.getPetStoreId(), "The cat items are identical");
     }
 
+    @Test
+    @DisplayName("Hawk Pet Not Found Sale Exception Test")
+    public void hawkPetNotFoundSaleExceptionTest() {
+
+        Bird hawk = new Bird(AnimalType.DOMESTIC, Skin.FUR, Gender.FEMALE, Breed.HAWK,
+                new BigDecimal("700.00"), 0);
+
+        String expectedMessage = "The Pet is not part of the pet store!!";
+        Exception exception = assertThrows(PetNotFoundSaleException.class, () ->{
+            petStore.soldPetItem(hawk);});
+        assertEquals(expectedMessage, exception.getMessage(), "PetNotFoundSaleExceptionTest was NOT encountered!");
+    }
+
     /**
      * Limitations to test factory as it does not instantiate before all
      * @return list of {@link DynamicNode} that contains the test results
