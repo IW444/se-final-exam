@@ -35,11 +35,11 @@ public class PetStore
      */
     public void init()
     {
-        this.addPetInventoryItem(new Dog(AnimalType.DOMESTIC, Skin.FUR, Gender.MALE, Breed.MALTESE,
+        this.addPetInventoryItem(new Dog(AnimalType.WILD, Skin.FUR, Gender.MALE, Breed.MALTESE,
                 new BigDecimal("750.00"), 3));
         this.addPetInventoryItem(new Dog(AnimalType.DOMESTIC, Skin.FUR, Gender.MALE, Breed.POODLE,
                 new BigDecimal("650.00"), 1));
-        this.addPetInventoryItem(new Cat(AnimalType.DOMESTIC, Skin.HAIR, Gender.MALE, Breed.BURMESE,
+        this.addPetInventoryItem(new Cat(AnimalType.WILD, Skin.HAIR, Gender.MALE, Breed.BURMESE,
                 new BigDecimal("65.00"),1));
         this.addPetInventoryItem(new Dog(AnimalType.DOMESTIC, Skin.HAIR, Gender.MALE, Breed.GERMAN_SHEPARD,
                 new BigDecimal("50.00"), 2));
@@ -47,7 +47,7 @@ public class PetStore
                 new BigDecimal("100.00"),2));
         this.addPetInventoryItem(new Bird(AnimalType.WILD, Skin.FEATHERS, Gender.FEMALE, Breed.CARDINAL,
                 new BigDecimal("200.00"),3));
-        this.addPetInventoryItem(new Bird(AnimalType.WILD, Skin.FEATHERS, Gender.MALE, Breed.HAWK,
+        this.addPetInventoryItem(new Bird(AnimalType.DOMESTIC, Skin.FEATHERS, Gender.MALE, Breed.HAWK,
                 new BigDecimal("300.00"),4));
 
 

@@ -60,6 +60,14 @@ public class Bird extends Pet implements PetImpl {
     }
 
     /**
+     * Is the bird allergy friendly determined by skin type
+     * @return A message that tells if the bird is hypoallergenic
+     */
+    public String birdHypoallergenic() {
+        return super.petHypoallergenic(this.skinType).replaceAll("pet", "bird");
+    }
+
+    /**
      * Depending if the bird is domestic, wild, or neither what can the say
      * @return what bird would speak
      */
@@ -68,10 +76,10 @@ public class Bird extends Pet implements PetImpl {
         String language;
         switch(animalType){
             case DOMESTIC:
-                language = "The bird goes chirp! chirp!";
+                language = "The bird goes tweet! tweet!";
                 break;
             case WILD:
-                language = "The bird goes tweet! tweet!";
+                language = "The bird goes squawk! squawk!";
                 break;
             default:
                 language = "The bird goes " + super.getPetType().speak + "! " + super.getPetType().speak + "!";
@@ -104,7 +112,7 @@ public class Bird extends Pet implements PetImpl {
      */
     @Override
     public Breed getBreed() {
-        return null;
+        return this.breed;
     }
 
     @Override
@@ -112,6 +120,7 @@ public class Bird extends Pet implements PetImpl {
         return super.toString() +
                 "The bird is " + this.animalType + "!\n" +
                 "The bird breed is " + this.getBreed() + "!\n" +
+                this.birdHypoallergenic() + "!\n" +
                 this.speak() + "\n" +
                 this.numberOfLegs();
     }
